@@ -1,3 +1,5 @@
+package mvc.src.models;
+
 public class Friends {
 	private String name;
 	private String address;
