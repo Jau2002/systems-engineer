@@ -3,38 +3,34 @@ package models;
 import java.util.ArrayList;
 
 public class Num {
+    private StringBuilder sb = new StringBuilder();
+    private ArrayList<Integer> divisible = new ArrayList<>();
+    private int i;
+    private int j;
+    private String message;
 
     public String isPrime(int num) {
-        ArrayList<Integer> divisible = new ArrayList<>();
-
         double equation = Math.sqrt(Math.round(num));
 
-        for (int i = 2; i <= equation; i++) {
+        for (i = 2; i <= equation; i++) {
             if (num % i == 0) {
-                divisible.add(i);
+                this.divisible.add(i);
             }
         }
-
-        String message;
-
-        StringBuilder sb = new StringBuilder();
-
         if (divisible.isEmpty()) {
             message = "The number " + num + " is prime";
         } else {
-            for (int j = 0; j < divisible.size(); j++) {
-                sb.append(divisible.get(j));
+            for (j = 0; j < divisible.size(); j++) {
+                this.sb.append(divisible.get(j));
 
                 if (j < divisible.size() - 1) {
-                    sb.append(", ");
+                    this.sb.append(", ");
                 }
             }
-
-            String format = sb.toString();
+            String format = this.sb.toString();
 
             message = "The number " + num + " isn't prime, is divisible for: " + format;
         }
-
         return message;
     }
 }
