@@ -17,11 +17,24 @@ public class Num {
 
         String message;
 
+        StringBuilder sb = new StringBuilder();
+
         if (divisible.isEmpty()) {
             message = "The number " + num + " is prime";
         } else {
-            message = "The number " + num + " isn't prime";
+            for (int j = 0; j < divisible.size(); j++) {
+                sb.append(divisible.get(j));
+
+                if (j < divisible.size() - 1) {
+                    sb.append(", ");
+                }
+            }
+
+            String format = sb.toString();
+
+            message = "The number " + num + " isn't prime, is divisible for: " + format;
         }
+
         return message;
     }
 }
