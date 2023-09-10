@@ -2,6 +2,6 @@ package mvc.src.models;
 
 import java.util.ArrayList;
 
-public class List {
+public class Contact {
 	ArrayList <Friends> friends = new ArrayList<Friends>();
 }
