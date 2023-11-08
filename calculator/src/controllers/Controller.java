@@ -1,5 +1,6 @@
 package src.controllers;
 
+import src.models.Digits;
 import src.views.GUI;
 import src.views.HandlerOnClick;
 
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
+    Digits digits;
     GUI gui;
     List<String> output = new ArrayList<>();
 
@@ -17,6 +19,7 @@ public class Controller {
     };
 
     public Controller() {
+        digits = new Digits(output);
         gui = new GUI(clickHandler);
     }
 
